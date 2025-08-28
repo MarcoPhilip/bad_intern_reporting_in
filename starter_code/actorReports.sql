@@ -1,7 +1,14 @@
 
 
 -- Most prolific actors
-
+SELECT 
+COUNT(film_actor.film_id) as totalFilms,
+CONCAT(actor.first_name, ' ', actor.last_name) as actorName
+FROM film_actor
+JOIN actor ON film_actor.actor_id = actor.actor_id
+GROUP BY actor.actor_id
+ORder BY totalFilms DESC
+;
 
 
 -- Revenue by Actor For The Month of June 2022
